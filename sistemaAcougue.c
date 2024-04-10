@@ -11,7 +11,7 @@ int main(void)
     //setlocale(LC_ALL, "Portuguese_Brazil");
     
     printf("======================================================\n");
-    printf("||SISTEMA DE CONTROLE DE VENDAS E ESTOQUE DE ACOUGUE|| \n");
+    printf("||SISTEMA DE CONSULTA DE VENDAS E ESTOQUE DE ACOUGUE|| \n");
     printf("======================================================\n");
     printf("\n");
     printf("TIPOS DE CARNES: \n\n 1 - Bovina \n 2 - Suina \n 3 - Ave \n");
@@ -42,7 +42,7 @@ int main(void)
             scanf("%f", &custoProduto);
             printf("Qual foi o valor de venda do quilo do seu produto ?\n");
             scanf("%f", &vendaProduto);
-            printf("Qual foi a Taxa paga de imposto?");
+            printf("Qual foi a Taxa paga de imposto?\n");
             scanf("%f", &taxa);
             printf("\n");
 
@@ -58,7 +58,7 @@ int main(void)
             lucro = (valorLiquido - valorCusto);
             estoqueAtual = (estoque - quilos);
 
-            printf("Seu imposto e de %2.2f%%\n", imposto);
+            printf("Seu imposto e de %2.2f%%\n", taxa);
             printf("Seu valor de custo foi R$%2.2f\n", valorCusto);
             printf("O valor da sua venda bruta foi de R$%2.2f\n", valorVenda);
             printf("Voce pagou de imposto R$%2.2f\n", imposto);
@@ -92,7 +92,7 @@ int main(void)
             scanf("%f", &custoProduto);
             printf("Qual foi o valor de venda do quilo do seu produto ?\n");
             scanf("%f", &vendaProduto);
-            printf("Qual foi a Taxa paga de imposto?");
+            printf("Qual foi a Taxa paga de imposto?\n");
             scanf("%f", &taxa);
             printf("\n");
 
@@ -108,7 +108,7 @@ int main(void)
             lucro = (valorLiquido - valorCusto);
             estoqueAtual = (estoque - quilos);
 
-            printf("Seu imposto e de %2.2f%%\n", imposto);
+            printf("Seu imposto e de %2.2f%%\n", taxa);
             printf("Seu valor de custo foi R$%2.2f\n", valorCusto);
             printf("O valor da sua venda bruta foi de R$%2.2f\n", valorVenda);
             printf("Voce pagou de imposto R$%2.2f\n", imposto);
@@ -142,7 +142,7 @@ int main(void)
             scanf("%f", &custoProduto);
             printf("Qual foi o valor de venda do quilo do seu produto ?\n");
             scanf("%f", &vendaProduto);
-            printf("Qual foi a Taxa paga de imposto?");
+            printf("Qual foi a Taxa paga de imposto?\n");
             scanf("%f", &taxa);
             printf("\n");
 
@@ -158,7 +158,7 @@ int main(void)
             lucro = (valorLiquido - valorCusto);
             estoqueAtual = (estoque - quilos);
 
-            printf("Seu imposto e de %2.2f%%\n", imposto);
+            printf("Seu imposto e de %2.2f%%\n", taxa);
             printf("Seu valor de custo foi R$%2.2f\n", valorCusto);
             printf("O valor da sua venda bruta foi de R$%2.2f\n", valorVenda);
             printf("Voce pagou de imposto R$%2.2f\n", imposto);
