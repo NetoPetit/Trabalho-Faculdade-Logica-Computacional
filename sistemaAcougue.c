@@ -6,7 +6,7 @@ int main(void)
 {
     int tipoCarne;
     float estoque, quilos, custoProduto, vendaProduto, valorVenda, imposto, valorLiquido,
-    lucro, estoqueAtual, valorCusto;
+    lucro, estoqueAtual, valorCusto, taxa;
     
     //setlocale(LC_ALL, "Portuguese_Brazil");
     
@@ -42,6 +42,8 @@ int main(void)
             scanf("%f", &custoProduto);
             printf("Qual foi o valor de venda do quilo do seu produto ?\n");
             scanf("%f", &vendaProduto);
+            printf("Qual foi a Taxa paga de imposto?");
+            scanf("%f", &taxa);
             printf("\n");
 
             printf("=========================\n");
@@ -51,12 +53,12 @@ int main(void)
 
             valorCusto = (custoProduto * quilos);
             valorVenda = (vendaProduto * quilos);
-            imposto = (valorVenda * 0.18) ;
+            imposto = (valorVenda / 100) * taxa;
             valorLiquido = (valorVenda - imposto);
             lucro = (valorLiquido - valorCusto);
             estoqueAtual = (estoque - quilos);
 
-            printf("Seu imposto e de 18,00%%\n");
+            printf("Seu imposto e de %2.2f%%\n", imposto);
             printf("Seu valor de custo foi R$%2.2f\n", valorCusto);
             printf("O valor da sua venda bruta foi de R$%2.2f\n", valorVenda);
             printf("Voce pagou de imposto R$%2.2f\n", imposto);
@@ -66,7 +68,6 @@ int main(void)
             printf("Voce retirou do seu estoque %2.2fKG\n", quilos);
             printf("Seu estoque atual e: %2.2fKG\n", estoqueAtual);
             printf("\n");
-            //qual a taxa de imposto a ser paga? perguntar pro usuario?
         }
 
         if (tipoCarne == 2)
@@ -91,6 +92,8 @@ int main(void)
             scanf("%f", &custoProduto);
             printf("Qual foi o valor de venda do quilo do seu produto ?\n");
             scanf("%f", &vendaProduto);
+            printf("Qual foi a Taxa paga de imposto?");
+            scanf("%f", &taxa);
             printf("\n");
 
             printf("=========================\n");
@@ -100,12 +103,12 @@ int main(void)
 
             valorCusto = (custoProduto * quilos);
             valorVenda = (vendaProduto * quilos);
-            imposto = (valorVenda * 0.14) ;
+            imposto = (valorVenda / 100) * taxa;
             valorLiquido = (valorVenda - imposto);
             lucro = (valorLiquido - valorCusto);
             estoqueAtual = (estoque - quilos);
 
-            printf("Seu imposto e de 14,00%%\n");
+            printf("Seu imposto e de %2.2f%%\n", imposto);
             printf("Seu valor de custo foi R$%2.2f\n", valorCusto);
             printf("O valor da sua venda bruta foi de R$%2.2f\n", valorVenda);
             printf("Voce pagou de imposto R$%2.2f\n", imposto);
@@ -115,7 +118,6 @@ int main(void)
             printf("Voce retirou do seu estoque %2.2fKG\n", quilos);
             printf("Seu estoque atual e: %2.2fKG\n", estoqueAtual);
             printf("\n");
-            //qual a taxa de imposto a ser paga? perguntar pro usuario?
         }
 
         if (tipoCarne == 3)
@@ -140,6 +142,8 @@ int main(void)
             scanf("%f", &custoProduto);
             printf("Qual foi o valor de venda do quilo do seu produto ?\n");
             scanf("%f", &vendaProduto);
+            printf("Qual foi a Taxa paga de imposto?");
+            scanf("%f", &taxa);
             printf("\n");
 
             printf("=========================\n");
@@ -149,12 +153,12 @@ int main(void)
 
             valorCusto = (custoProduto * quilos);
             valorVenda = (vendaProduto * quilos);
-            imposto = (valorVenda * 0.09) ;
+            imposto = (valorVenda / 100) * taxa;
             valorLiquido = (valorVenda - imposto);
             lucro = (valorLiquido - valorCusto);
             estoqueAtual = (estoque - quilos);
 
-            printf("Seu imposto e de 9,00%%\n");
+            printf("Seu imposto e de %2.2f%%\n", imposto);
             printf("Seu valor de custo foi R$%2.2f\n", valorCusto);
             printf("O valor da sua venda bruta foi de R$%2.2f\n", valorVenda);
             printf("Voce pagou de imposto R$%2.2f\n", imposto);
@@ -164,7 +168,6 @@ int main(void)
             printf("Voce retirou do seu estoque %2.2fKG\n", quilos);
             printf("Seu estoque atual e: %2.2fKG\n", estoqueAtual);
             printf("\n");
-            //qual a taxa de imposto a ser paga? perguntar pro usuario?
         }
 
     else if (tipoCarne < 1 || tipoCarne > 3)
