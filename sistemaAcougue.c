@@ -1,7 +1,8 @@
 #include <stdio.h> //biblioteca de entrada e saída
 #include <stdlib.h> //biblioteca de funções
 
-int main(void)//função que inicia o programa
+int setup()//função criada para o programa não encerrar após a conclusão da primeira consulta 
+          //e o usuário não precisar ficar abrindo o programa para novas consultas
 {
     //declarações de variáveis e seus tipos
     int tipoCarne; //variável tipo int
@@ -12,7 +13,7 @@ int main(void)//função que inicia o programa
     printf("||SISTEMA DE CONSULTA DE VENDAS E ESTOQUE DE ACOUGUE|| \n"); // print principal do sistema aonde o usuario selecionara o tipo de carne
     printf("======================================================\n");// que ele deseja consultar dando 3 opcoes
     printf("\n");//pula linha
-    printf("TIPOS DE CARNES: \n\n 1 - Bovina \n 2 - Suina \n 3 - Ave \n");//opções a serem escolhidas
+    printf("TIPOS DE CARNES: \n\n 1 - Bovina \n 2 - Suina \n 3 - Ave \n 4 - Encerrar programa\n");//opções a serem escolhidas
     printf("\n");//pula linha
     printf("Escolha o numero do tipo de carne que deseja consultar: ");//pergunta ao usuário
     scanf("%d", &tipoCarne); // inicia a prompt para o usuario final selecionar o tipo de carne e seta o valor na variavel
@@ -102,6 +103,13 @@ int main(void)//função que inicia o programa
             printf("\n");
 
         }
+    
+        if(tipoCarne == 4)
+        {
+            system("PAUSE");
+            return 0;
+        }
+
     // Resultado final da coleta de informacoes e suas saídas
 
     printf("=========================\n");
@@ -138,4 +146,13 @@ int main(void)//função que inicia o programa
     printf("======================\n");
 
     system("PAUSE");//para o programa
+}
+
+int main()
+{
+    while (1)
+    {
+        setup();
+    }
+    return 0;
 }
