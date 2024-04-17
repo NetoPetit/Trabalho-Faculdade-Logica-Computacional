@@ -10,7 +10,7 @@ int main(void)//função que inicia o programa
     
     printf("======================================================\n");
     printf("||SISTEMA DE CONSULTA DE VENDAS E ESTOQUE DE ACOUGUE|| \n"); // print principal do sistema aonde o usuario selecionara o tipo de carne
-    printf("======================================================\n");// que ele deseja consomuir dando 3 opcoes
+    printf("======================================================\n");// que ele deseja consultar dando 3 opcoes
     printf("\n");//pula linha
     printf("TIPOS DE CARNES: \n\n 1 - Bovina \n 2 - Suina \n 3 - Ave \n");//opções a serem escolhidas
     printf("\n");//pula linha
