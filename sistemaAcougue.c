@@ -13,12 +13,18 @@ int setup()//função criada para o programa não encerrar após a conclusão da
     printf("||SISTEMA DE CONSULTA DE VENDAS E ESTOQUE DE ACOUGUE|| \n"); // print principal do sistema aonde o usuario selecionara o tipo de carne
     printf("======================================================\n");// que ele deseja consultar dando 3 opcoes
     printf("\n");//pula linha
-    printf("TIPOS DE CARNES: \n\n 1 - Bovina \n 2 - Suina \n 3 - Ave \n 4 - Encerrar programa\n");//opções a serem escolhidas
+    printf("OPCOES: \n\n 1 - Bovina \n 2 - Suina \n 3 - Ave \n 4 - Encerrar consulta\n");//opções a serem escolhidas
     printf("\n");//pula linha
-    printf("Escolha o numero do tipo de carne que deseja consultar: ");//pergunta ao usuário
+    printf("Escolha uma opcao: ");//pergunta ao usuário
     scanf("%d", &tipoCarne); // inicia a prompt para o usuario final selecionar o tipo de carne e seta o valor na variavel
     printf("\n");//pula linha
     
+        if (tipoCarne < 1 || tipoCarne > 4) // caso o valor selecionado for inexistente ele encerra a consulta
+        {
+        printf("Codigo inexistente! Reinicie o sistema!\n");//aviso para o usuário
+        exit(0);//encerra o programa
+        }
+        
         if (tipoCarne == 1) // se o usuario selecionar 1 o mesmo e direcionado para a seguinte coluna, aonde e iniciado a producao
         {
             printf("==============================\n"); 
@@ -34,7 +40,7 @@ int setup()//função criada para o programa não encerrar após a conclusão da
                 {
                     printf("\n");//pula linha
                     printf("Operacao invalida! Valor maior que o estoque! Reinicie o sitema!\n");//aviso para o usuário que ele inseriu dados inválidos
-                    system ("PAUSE");//para o programa
+                    exit(0);//para o programa
                 }
 
             printf("Qual foi o valor de custo do quilo do seu produto ?\n");//Mensagem de solicitacao para o prompt
@@ -59,10 +65,10 @@ int setup()//função criada para o programa não encerrar após a conclusão da
             scanf("%f", &quilos);
 
                 if (quilos > estoque)//se inserir mais quilos que o disponivel no estoque o sistema se encerra
-                {
+                {                    //e notifica o usuário
                     printf("\n");
                     printf("Operacao invalida! Valor maior que o estoque! Reinicie o sitema!\n");
-                    system("PAUSE");
+                    exit(0);
                 }
 
             printf("Qual foi o valor de custo do quilo do seu produto ?\n");
@@ -72,8 +78,6 @@ int setup()//função criada para o programa não encerrar após a conclusão da
             printf("Qual foi a Taxa paga de imposto?\n");
             scanf("%f", &taxa);
             printf("\n");
-
-
         }
 // segue a mesma logica no codigo abaixo, mesmos sets de variaveis do bloco acima
         if (tipoCarne == 3)
@@ -88,10 +92,10 @@ int setup()//função criada para o programa não encerrar após a conclusão da
             scanf("%f", &quilos);
             
                 if (quilos > estoque)//se inserir mais quilos que o disponivel no estoque o sistema se encerra
-                {
+                {                    //e notifica o usuário
                     printf("\n");
                     printf("Operacao invalida! Valor maior que o estoque! Reinicie o sitema!\n");
-                    system("PAUSE");
+                    exit(0);
                 }
 
             printf("Qual foi o valor de custo do quilo do seu produto ?\n");
@@ -104,10 +108,10 @@ int setup()//função criada para o programa não encerrar após a conclusão da
 
         }
     
-        if(tipoCarne == 4)
+        if(tipoCarne == 4)//se escolher opção 4 o programa se encerra
         {
-            system("PAUSE");
-            return 0;
+            printf("Consulta cancelada! Programa encerrado!");//avisa o usuário
+            exit(0);//sai do programa
         }
 
     // Resultado final da coleta de informacoes e suas saídas
@@ -135,12 +139,6 @@ int setup()//função criada para o programa não encerrar após a conclusão da
     printf("Seu estoque atual e: %2.2fKG\n", estoqueAtual);// Tras a quantidade de produto atual
     printf("\n");
 
-        if (tipoCarne < 1 || tipoCarne > 3) // caso o valor selecionado for inexistente ele encerra a consulta
-        {
-        printf("Codigo inexistente! Reinicie o sitema!\n");//aviso para o usuário
-        printf("\n");//pula linha
-        }
-
     printf("======================\n");
     printf("||FIM DA CONSULTA!!!||\n");//indica o fim da consulta
     printf("======================\n");
@@ -148,11 +146,11 @@ int setup()//função criada para o programa não encerrar após a conclusão da
     system("PAUSE");//para o programa
 }
 
-int main()
+int main()//função principal que inicia o programa chamando a função que contém o programa
 {
-    while (1)
+    while (1)//enquanto for verdade faça
     {
-        setup();
+        setup();//função com o programa sendo chamada
     }
-    return 0;
+    return 0;//retorna ao início
 }
